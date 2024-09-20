@@ -11,7 +11,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            background-color: #ffe6e6; /* Fondo suave */
+            background-color: #ffe6e6;
             color: #1e1e1e;
             margin: 0;
             padding: 0;
@@ -26,9 +26,9 @@
 
         h1 {
             font-family: 'Pacifico', cursive;
-            color: #ff1744; /* Color rojo del texto */
+            color: #ff1744;
             text-shadow: 0px 4px 10px rgba(255, 20, 60, 0.7);
-            font-size: 3.5vw; /* Tamaño de texto reducido */
+            font-size: 3.5vw;
             margin-bottom: 20px;
         }
 
@@ -39,8 +39,8 @@
             cursor: pointer;
             border: none;
             border-radius: 15px;
-            background-color: #ff1744; /* Botón rojo */
-            color: #fff; /* Texto en blanco */
+            background-color: #ff1744;
+            color: #fff;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 5px 15px rgba(255, 20, 60, 0.7);
             font-family: 'Pacifico', cursive;
@@ -48,19 +48,19 @@
         }
 
         button:hover {
-            background-color: #e91e63; /* Color al pasar el mouse */
+            background-color: #e91e63;
             transform: scale(1.1);
         }
 
         #mensaje {
-            font-size: 2vw; /* Tamaño de texto reducido */
+            font-size: 2vw;
             margin-top: 30px;
             display: none;
-            color: #ff1744; /* Color del mensaje */
+            color: #ff1744;
             text-shadow: 0px 4px 10px rgba(255, 20, 60, 0.7);
             line-height: 1.4;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.9); /* Fondo blanco para el mensaje */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             max-width: 600px;
             margin-left: auto;
@@ -69,7 +69,7 @@
 
         .corazon {
             color: red;
-            font-size: 3vw; /* Tamaño de corazón reducido */
+            font-size: 3vw;
             display: inline-block;
             margin: 10px;
             animation: latir 1.2s infinite;
@@ -87,7 +87,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 20vw; /* Tamaño de corazón grande reducido */
+            font-size: 20vw;
             color: red;
             animation: explotar 2s ease-in-out forwards;
         }
@@ -124,10 +124,9 @@
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
-        /* Ajustes responsivos */
         @media (max-width: 480px) {
             h1 {
-                font-size: 7vw; /* Ajuste para móviles */
+                font-size: 7vw;
             }
             button {
                 padding: 8px 16px;
@@ -135,13 +134,13 @@
                 width: 80px;
             }
             #mensaje {
-                font-size: 4vw; /* Ajuste para móviles */
+                font-size: 4vw;
             }
             #big-heart {
-                font-size: 45vw; /* Ajuste para móviles */
+                font-size: 45vw;
             }
             .corazon {
-                font-size: 5vw; /* Ajuste para móviles */
+                font-size: 5vw;
             }
         }
     </style>
@@ -167,8 +166,8 @@
     <div id="big-heart">&#10084;</div>
 
     <!-- Audio de fondo -->
-    <audio id="romantic-song" loop autoplay>
-        <source src="Josean Log - Chachachá (Lyric Video).mp3" type="audio/mp3">
+    <audio id="romantic-song" loop>
+        <source src="Mi niña bonita sonrisa de princesa (Letra).mp3" type="audio/mp3">
         Tu navegador no soporta audio.
     </audio>
 
@@ -178,7 +177,7 @@
         const mensaje = document.getElementById("mensaje");
         const backgroundHearts = document.querySelector('.background-hearts');
         const bigHeart = document.getElementById("big-heart");
-        const body = document.body;
+        const romanticSong = document.getElementById("romantic-song");
 
         let noClickCount = 0;
 
@@ -207,6 +206,9 @@
             mensaje.style.display = "block";
             bigHeart.style.display = "block";
             noButton.style.display = "none"; // Ocultar el botón "No"
+            
+            // Reproducir la canción
+            romanticSong.play();
 
             for (let i = 0; i < 50; i++) {
                 createHeart();
